@@ -24,7 +24,7 @@
 <meta property="og:description" content="官方指南https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;index.html 部署hexo 安装1npm install hexo-cli -g 生成博客目录1234hexo init blogcd blognpm installhexo server 出现INFO  Hexo is running at http:&#x2F;&#x2F;localhost:4000&#x2F; . Press Ctrl+C to st">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-10T02:00:08.000Z">
-<meta property="article:modified_time" content="2023-01-16T06:42:35.212Z">
+<meta property="article:modified_time" content="2023-01-16T06:56:44.852Z">
 <meta property="article:author" content="Midnight">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -261,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          479 字
+          695 字
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
         
-          4 分钟
+          6 分钟
         
       </span>
     
@@ -324,12 +324,29 @@
 <h1 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题仓库</a></li>
 </ul>
-<h2 id="安装-以fluid为例"><a href="#安装-以fluid为例" class="headerlink" title="安装(以fluid为例)"></a>安装(以<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a>为例)</h2><ul>
+<h2 id="安装-以fluid为例，其他同理"><a href="#安装-以fluid为例，其他同理" class="headerlink" title="安装(以fluid为例，其他同理)"></a>安装(以<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">fluid</a>为例，其他同理)</h2><ul>
 <li>命令行进入博客目录，并输入以下命令<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure></li>
 <li>修改<code>_config.yml</code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">theme: fluid  # 指定主题<br>language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改<br></code></pre></td></tr></table></figure></li>
 <li>创建「关于页」<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo new page about<br></code></pre></td></tr></table></figure>
 创建成功后，编辑博客目录下 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">about</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">这里写关于页的正文，支持</span> <span class="hljs-string">Markdown,</span> <span class="hljs-string">HTML</span><br></code></pre></td></tr></table></figure></li>
 </ul>
+<h1 id="将hexo部署到github"><a href="#将hexo部署到github" class="headerlink" title="将hexo部署到github"></a>将hexo部署到github</h1><ol>
+<li>GitHub新建同名公开仓库</li>
+</ol>
+<ul>
+<li>比如你GitHub的用户名为abc，则新建一个名为abc.github.io的公开仓库。</li>
+</ul>
+<ol start="2">
+<li>修改<code>_config.yml</code>文件，</li>
+</ol>
+<ul>
+<li>type：默认git即可</li>
+<li>repo：按照自己的仓库进行修改</li>
+<li>branch：推送到哪个分支<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">git@github.com:abc/abc.github.io.git</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>执行命令<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo d<br></code></pre></td></tr></table></figure></li>
+</ol>
 
                 
               </div>
